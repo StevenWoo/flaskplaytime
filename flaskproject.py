@@ -10,6 +10,9 @@ def hello_world():
 def moretest():
     return "<h2>test more</h2>"
 
+@app.route("/cssgrid")
+def cssgridtest():
+    return render_template('cssgrid.html')
 
 @app.route('/post/<int:post_id>')
 def show_post(post_id):
