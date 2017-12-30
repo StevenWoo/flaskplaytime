@@ -1,0 +1,59 @@
+<head>
+  <link rel="stylesheet" type="text/css" 
+        href="{{ url_for('static', filename='gridtest1.css')}}" >
+  <style>
+    .container {
+    display: grid;
+    grid-gap: 5px;    
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 50px 350px 50px;
+
+    grid-template-areas:
+        ". h h h h h h h h h h ."
+        "c c c c c c c c c c m m"
+        ". . f f f f f f f f . .";
+    }
+    
+
+@media screen and (max-width: 640px) {
+    .container {
+        grid-template-areas:
+            "m m m m m m h h h h h h"
+            "c c c c c c c c c c c c"
+            "f f f f f f f f f f f f";
+    }
+}
+    
+    .header {
+      grid-area: h;
+    }
+
+    .menu {
+      grid-area: m;
+    }
+
+    .content {
+      grid-area: c;
+    }
+
+    .footer {
+      grid-area: f;
+    }
+
+
+
+
+}
+    </style>
+</head>
+<body>
+
+  <div class="container">
+  <div class="header">HEADER</div>
+  <div class="menu">MENU</div>
+  <div class="content">CONTENT</div>
+  <div class="footer">FOOTER</div>
+  </div>
+  
+
+</oody>
