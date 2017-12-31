@@ -23,3 +23,7 @@ flask run
 add environment variables to ~/.bashrc
 export APP_SETTINGS="config.DevelopmentConfig"
 export APP_SETTINGS="config.ProductionConfig"
+need to add variables to bash/script init
+for production
+export DATABASE_URL="postgresql://dbusername:password@localhost/rocket"
+for localhost
