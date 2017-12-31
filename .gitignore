@@ -7,3 +7,4 @@ flaskprojectenv
 __pycache__
 pip-selfcheck.json
 *~
+migrations
