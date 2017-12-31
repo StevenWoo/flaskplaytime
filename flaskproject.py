@@ -1,6 +1,8 @@
 from flask import Flask
 from flask import render_template
 from flask_sqlalchemy import SQLAlchemy
+from flask import json
+from flask import jsonify
 import os
 
 app = Flask(__name__)
@@ -38,6 +40,26 @@ def hello(input_name=None):
 @app.route('/resume/')
 def resume():
     return render_template('resume.html')
+
+@app.route('/api/v1/test1')
+def api_v1_test1():
+    h = {}
+    h['key1'] = 'value1'
+    h['key2'] = 'value2'
+
+    response = app.response_class(
+        response=json.dumps(h),
+        status=200,
+        mimetype='application/json'
+    )
+    return response
+
+@app.route('/api/v1/test2')
+def api_v1_test2():
+    h = {}
+    h['key3'] = 'value3'
+    h['key4'] = 'value4'
+    return jsonify(h)
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0')
