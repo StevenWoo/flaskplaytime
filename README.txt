@@ -19,3 +19,7 @@ to run from osx
 export FLASK_APP=flaskproject.py
  export FLASK_DEBUG=1
 flask run
+# or
+add environment variables to ~/.bashrc
+export APP_SETTINGS="config.DevelopmentConfig"
+export APP_SETTINGS="config.ProductionConfig"
