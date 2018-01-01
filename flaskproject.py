@@ -37,7 +37,7 @@ def show_post(post_id):
 def hello(input_name=None):
     return render_template('hello.html', name=input_name)
 
-@app.route('/resume/')
+@app.route('/resume')
 def resume():
     return render_template('resume.html')
 
@@ -46,7 +46,6 @@ def api_v1_test1():
     h = {}
     h['key1'] = 'value1'
     h['key2'] = 'value2'
-
     response = app.response_class(
         response=json.dumps(h),
         status=200,
