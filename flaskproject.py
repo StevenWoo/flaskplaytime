@@ -13,8 +13,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 @app.route("/")
-def hello_world():
-    return "<h1 style='color:blue'>Welcome to swoo.club!</h1>"
+def root_page():
+    return render_template('index.html')
 
 @app.route("/test")
 def moretest():
@@ -37,7 +37,7 @@ def show_post(post_id):
 def hello(input_name=None):
     return render_template('hello.html', name=input_name)
 
-@app.route('/resume')
+@app.route('/resume/')
 def resume():
     return render_template('resume.html')
 
