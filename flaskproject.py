@@ -41,6 +41,10 @@ def hello(input_name=None):
 def resume():
     return render_template('resume.html')
 
+@app.route('/cycling')
+def cycling():
+    return render_template('cycling.html')
+
 @app.route('/api/v1/test1')
 def api_v1_test1():
     h = {}
