@@ -24,10 +24,13 @@ def get_forecast(url):
     txt = ''
 
 
+    count = 0
     for div in divs:
         div.find()
-        txt = txt + div.text + '<br />'
-        logging.warning(div.text)
+        txt = txt + str(div) + '<br />'
+        count = count + 1
+        if count > 1:
+            break
     return Markup(txt)
 
 def test_file():
