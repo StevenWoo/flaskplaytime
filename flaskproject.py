@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask import json
 from flask import jsonify
 import os
+from weather_scrape import get_forecast
 
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
@@ -43,7 +44,9 @@ def resume():
 
 @app.route('/cycling')
 def cycling():
-    return render_template('cycling.html')
+    url = 'forecast.weather.gov/MapClick.php?lat=37.3775&lon=-122.1144&lg=english&&FcstType=text'
+    text = get_forecast(url)
+    return render_template('cycling.html', weather = text)
 
 @app.route('/api/v1/test1')
 def api_v1_test1():
