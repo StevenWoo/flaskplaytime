@@ -17,24 +17,26 @@ def extract_forecasts(soup, max_count):
     count = 0
     for div in divs:
         div.find()
-        txt = txt + str(div) + '<br />'
+        for img in div.find_all('img'):
+            img_url = img['src']
+            img['src'] = 'https://forecast.weather.gov/' + img_url
+            img['width'] = 32
+            img['height'] = 32
+
+        div['class'] = 'day' + str(count+1)
+        txt = txt + str(div)
         count = count + 1
         if count > max_count - 1:
             break
     return Markup(txt)    
 
 def get_web_forecast(url):
-
     response = http.request('GET', url)
-
     if not response.status is 200:
         logging.warning('not 200')
         return soup.get_text()
-    soup = BeautifulSoup(response.data, "html.parser")
-    
+    soup = BeautifulSoup(response.data, "html.parser")    
     return extract_forecasts(soup, 3)
-    
-
 
 def test_file():
     with open('temp.txt', 'r') as file_object:

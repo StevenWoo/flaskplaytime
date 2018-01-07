@@ -1,9 +1,43 @@
+<head>
+  <style>
+    .container {
+      display: grid;
+      grid-gap: 5px;    
+      grid-template-columns: repeat(12, 1fr);
 
+      grid-template-rows: 150px 350px;
+      grid-template-areas:
+        ". . . d1 d1 d2 d2 d3 d3 . . ."
+        ". . c c   c  c  c  c  c c . .";    
+    }
+
+    .day1 {
+      grid-area: d1;
+    }
+    .day2 {
+      grid-area: d2;
+    }
+    .day3 {
+      grid-area: d3;
+    }
+    .content {
+      grid-area: c;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div class="container">
 {% if weather %}
   <p><small>{{ weather }}</small></p>
 {% else %}
   <p>error getting weather</p>
-{% endif %}
+  {% endif %}
+
+
+<div class='content'>  
+  
 
   
 <h2>Off road</h2>
@@ -19,4 +53,6 @@
 <p><a href="https://www.sccgov.org/sites/rda/RT/Pages/stormdamage.aspx">Santa Clara County road work for storm damage</a></p>
 <p><a href="https://www.sccgov.org/sites/rda/Pages/roadclosures.aspx">Santa Clara County road closures</a></p>
 <p><a href="http://publicworks.smcgov.org/our-projects">San Mateo Conty road work status</a></p>
- 
+</div>
+</div>
+</body>

@@ -47,6 +47,8 @@ def resume():
 
 @app.route('/cycling')
 def cycling():
+    # todo parameterize latitude longitude
+    # retrieve latitude longitude from browser
     url = 'forecast.weather.gov/MapClick.php?lat=37.3775&lon=-122.1144&lg=english&&FcstType=text'
     text = get_web_forecast(url)
     return render_template('cycling.html', weather = text)
