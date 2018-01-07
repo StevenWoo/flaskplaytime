@@ -3,9 +3,10 @@ from flask import render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask import json
 from flask import jsonify
+from flask import make_response
 import os
-from weather_scrape import get_forecast
-
+from weather_scrape import get_web_forecast
+from weather_scrape import test_file
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 
@@ -40,13 +41,20 @@ def hello(input_name=None):
 
 @app.route('/resume/')
 def resume():
-    return render_template('resume.html')
+    r = make_response(render_template('resume.html'))
+    r.headers.set('Content-Security-Policy', "default-src 'self'; connect-src 'self'; report-uri 'https://swoo.club/api/v1/csp_report'")
+    return r
 
 @app.route('/cycling')
 def cycling():
     url = 'forecast.weather.gov/MapClick.php?lat=37.3775&lon=-122.1144&lg=english&&FcstType=text'
-    text = get_forecast(url)
+    text = get_web_forecast(url)
     return render_template('cycling.html', weather = text)
+
+@app.route('/testscrape')
+def test_scrape():
+    text = test_file()
+    return render_template('test_scrape.html', weather = text)
 
 @app.route('/api/v1/test1')
 def api_v1_test1():
