@@ -1,15 +1,18 @@
-<head>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
   <style>
     .container {
       display: grid;
       grid-gap: 5px;    
       grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: 30px 180px 20px 500px 30px;
+      grid-template-rows: 30px 180px 20px 500px 120px 30px;
         grid-template-areas:
         ". . . .   h  h  h  h  . . . ."
         ". . . d1 d2 d3 d4 d5 d6 . . ."
         ". . . .  sd sd sd sd  . . . ."    
         ". . . .  c  c  c  c   . . . ."
+        "a a a a  a  a  a  a   a a a a"
         ". . . .  .  f  f  .   . . . .";    
     }
 
@@ -39,6 +42,9 @@
     }    
     .content {
       grid-area: c;
+    }
+    .ad {
+      grid-area: a;
     }
     .footer {
       grid-area: f;    
@@ -102,6 +108,17 @@
   <center>
     <small>send corrections to <a href="mailto:stevenwoo@gmail.com">Steven Woo</a></small>
   </center>
+</div>
+<div class = 'ad'>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- my first ad -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-8415442439263515"
+     data-ad-slot="1979300894"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </div>
 </div>
 </body>
