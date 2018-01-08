@@ -4,14 +4,18 @@
       display: grid;
       grid-gap: 5px;    
       grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: 180px 20px 500px 30px;
-      grid-template-areas:
+      grid-template-rows: 30px 180px 20px 500px 30px;
+        grid-template-areas:
+        ". . . .   h  h  h  h  . . . ."
         ". . . d1 d2 d3 d4 d5 d6 . . ."
         ". . . .  sd sd sd sd  . . . ."    
         ". . . .  c  c  c  c   . . . ."
         ". . . .  .  f  f  .   . . . .";    
     }
 
+    .header{
+      grid-area: h;
+    }
     .day1 {
       grid-area: d1;
     }
@@ -42,15 +46,31 @@
 
     
   </style>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112197486-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-112197486-1');
+</script>
+
 </head>
 <body>
   <div class="container">
+    <div class="header">
+      <center>
+    <small>forecast for downtown Los Altos, California</small>  </center>
+     </div>
 {% if weather %}
 <p><small>{{ weather }}</small></p>
 <div class='subday'>
+  <center>
   <small>
     Weather forecast from <a href="https://www.weather.gov">weather.gov</a>
   </small>
+  </center>
   </div>
 
 {% else %}
@@ -62,7 +82,7 @@
   
 
   
-<h2>Off road trail status/parks</h2>
+<center><h2>Off road trail status/parks</h2></center>
 <p><a href="https://www.openspace.org/visit-a-preserve/trail-conditions">Midpeninsula Open Space trail conditions</a>
   </p>
 <p><a href="https://openspace.org/preserves/fremont-older">Fremont Older trail status</a></p>
@@ -72,14 +92,16 @@
 <p><a href="http://parks.smcgov.org/san-mateo-county-park-advisories">San Mateo County Parks advisories</a></p>
 <p><a href="https://www.sccgov.org/sites/parks/Pages/Closures.aspx">Santa Clara County Parks closures</a></p>
 
-<h2>Road conditions</h2>
+<center><h2>Road conditions</h2></center>
 <p><a href="http://www.dot.ca.gov/cgi-bin/roads.cgi">CalTrans road conditions</a></p>
 <p><a href="https://www.sccgov.org/sites/rda/RT/Pages/stormdamage.aspx">Santa Clara County road work for storm damage</a></p>
 <p><a href="https://www.sccgov.org/sites/rda/Pages/roadclosures.aspx">Santa Clara County road closures</a></p>
 <p><a href="http://publicworks.smcgov.org/our-projects">San Mateo County road work status</a></p>
 </div>
-  <div class = 'footer'>
+<div class = 'footer'>
+  <center>
     <small>send corrections to <a href="mailto:stevenwoo@gmail.com">Steven Woo</a></small>
-  </div>
+  </center>
+</div>
 </div>
 </body>
