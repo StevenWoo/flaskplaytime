@@ -7,6 +7,7 @@ from flask import make_response
 import os
 from weather_scrape import get_web_forecast
 from weather_scrape import test_file
+from weather_scrape import get_web_forecast_v2
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 
@@ -45,18 +46,24 @@ def resume():
     r.headers.set('Content-Security-Policy', "default-src 'self'; connect-src 'self'; report-uri 'https://swoo.club/api/v1/csp_report'")
     return r
 
+url = 'forecast.weather.gov/MapClick.php?lat=37.3775&lon=-122.1144&lg=english&&FcstType=text'
+
 @app.route('/cycling')
 def cycling():
     # todo parameterize latitude longitude
     # retrieve latitude longitude from browser
-    url = 'forecast.weather.gov/MapClick.php?lat=37.3775&lon=-122.1144&lg=english&&FcstType=text'
-    text = get_web_forecast(url)
+    text = get_web_forecast_v2(url)
     return render_template('cycling.html', weather = text)
 
 @app.route('/testscrape')
 def test_scrape():
     text = test_file()
     return render_template('test_scrape.html', weather = text)
+
+@app.route('/testcache')
+def test_cache():
+    text = get_web_forecast_v2(url)
+    return render_template('test_scrape.html', weather = text)    
 
 @app.route('/api/v1/test1')
 def api_v1_test1():
