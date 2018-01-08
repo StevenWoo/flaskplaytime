@@ -4,11 +4,12 @@
       display: grid;
       grid-gap: 5px;    
       grid-template-columns: repeat(12, 1fr);
-
-      grid-template-rows: 150px 350px;
+      grid-template-rows: 180px 20px 500px 30px;
       grid-template-areas:
         ". . . d1 d2 d3 d4 d5 d6 . . ."
-        ". . . .   c  c  c  c  . . . .";    
+        ". . . .  sd sd sd sd  . . . ."    
+        ". . . .  c  c  c  c   . . . ."
+        ". . . .  .  f  f  .   . . . .";    
     }
 
     .day1 {
@@ -28,9 +29,15 @@
     }
     .day6 {
       grid-area: d6;
+    }
+    .subday {
+      grid-area: sd;
     }    
     .content {
       grid-area: c;
+    }
+    .footer {
+      grid-area: f;    
     }
 
     
@@ -39,7 +46,13 @@
 <body>
   <div class="container">
 {% if weather %}
-  <p><small>{{ weather }}</small></p>
+<p><small>{{ weather }}</small></p>
+<div class='subday'>
+  <small>
+    Weather forecast from <a href="https://www.weather.gov">weather.gov</a>
+  </small>
+  </div>
+
 {% else %}
   <p>error getting weather</p>
   {% endif %}
@@ -63,7 +76,10 @@
 <p><a href="http://www.dot.ca.gov/cgi-bin/roads.cgi">CalTrans road conditions</a></p>
 <p><a href="https://www.sccgov.org/sites/rda/RT/Pages/stormdamage.aspx">Santa Clara County road work for storm damage</a></p>
 <p><a href="https://www.sccgov.org/sites/rda/Pages/roadclosures.aspx">Santa Clara County road closures</a></p>
-<p><a href="http://publicworks.smcgov.org/our-projects">San Mateo Conty road work status</a></p>
+<p><a href="http://publicworks.smcgov.org/our-projects">San Mateo County road work status</a></p>
 </div>
+  <div class = 'footer'>
+    <small>send corrections to <a href="mailto:stevenwoo@gmail.com">Steven Woo</a></small>
+  </div>
 </div>
 </body>

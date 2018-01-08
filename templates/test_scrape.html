@@ -4,11 +4,12 @@
       display: grid;
       grid-gap: 5px;    
       grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: 150px 350px;
+      grid-template-rows: 180px 20px 350px;
 
       grid-template-areas:
 
         ". . . d1 d2 d3 d4 d5 d6 . . ."
+        ". . . . sd sd sd sd . . . ."
         ". . . .   c  c  c  c  . . . .";    
     }
 
@@ -29,7 +30,10 @@
     }
     .day6 {
       grid-area: d6;
-    }    
+    }
+    .subday {
+      grid-area: sd;
+    }
     .content {
       grid-area: c;
     }
@@ -40,7 +44,12 @@
 <body>
   <div class="container">
 {% if weather %}
-  <p><small>{{ weather }}</small></p>
+<p><small>{{ weather }}</small></p>
+<div class='subday'>
+  <small>
+    Weather forecast from <a href="https://www.weather.gov">weather.gov</a>
+  </small>
+  </div>
 {% else %}
   <p>error getting weather</p>
   {% endif %}
