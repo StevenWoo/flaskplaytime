@@ -48,12 +48,12 @@ def resume():
 
 url = 'forecast.weather.gov/MapClick.php?lat=37.3775&lon=-122.1144&lg=english&&FcstType=text'
 
-@app.route('/cycling')
+@app.route('/bayareacycling')
 def cycling():
     # todo parameterize latitude longitude
     # retrieve latitude longitude from browser
     text = get_web_forecast_v2(url)
-    return render_template('cycling.html', weather = text)
+    return render_template('bayareacycling.html', weather = text)
 
 @app.route('/testscrape')
 def test_scrape():
