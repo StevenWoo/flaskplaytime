@@ -6,11 +6,10 @@
       display: grid;
       grid-gap: 5px;    
       grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: 30px 180px 20px 500px 120px 30px;
+      grid-template-rows: 30px 180px 500px 120px 30px;
         grid-template-areas:
         ". . . .   h  h  h  h  . . . ."
         ". . . d1 d2 d3 d4 d5 d6 . . ."
-        ". . . .  sd sd sd sd  . . . ."    
         ". . . .  c  c  c  c   . . . ."
         "a a a a  a  a  a  a   a a a a"
         ". . . .  .  f  f  .   . . . .";    
@@ -37,9 +36,6 @@
     .day6 {
       grid-area: d6;
     }
-    .subday {
-      grid-area: sd;
-    }    
     .content {
       grid-area: c;
     }
@@ -67,21 +63,20 @@
   <div class="container">
     <div class="header">
       <center>
-    <small>forecast for downtown Los Altos, California</small>  </center>
+        {% if forecast_url %}
+        <a href="{{forecast_url}}">
+        {% endif %}
+        <small>forecast for downtown Los Altos, California</small>  </center>
+      {% if forecast_url %}
+      </a>
+        {% endif %}
      </div>
 {% if weather %}
 <p><small>{{ weather }}</small></p>
-<div class='subday'>
-  <center>
-  <small>
-    Weather forecast from <a href="https://www.weather.gov">weather.gov</a>
-  </small>
-  </center>
-  </div>
 
 {% else %}
   <p>error getting weather</p>
-  {% endif %}
+{% endif %}
 
 
 <div class='content'>  
@@ -110,6 +105,7 @@
   </center>
 </div>
 <div class = 'ad'>
+  <center>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- my first ad -->
 <ins class="adsbygoogle"
@@ -119,6 +115,8 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+</center>
 </div>
+
 </div>
 </body>

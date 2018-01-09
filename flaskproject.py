@@ -53,17 +53,13 @@ def cycling():
     # todo parameterize latitude longitude
     # retrieve latitude longitude from browser
     text = get_web_forecast_v2(url)
-    return render_template('bayareacycling.html', weather = text)
+    return render_template('bayareacycling.html', weather = text, forecast_url = 'https://' + url)
 
 @app.route('/testscrape')
 def test_scrape():
     text = test_file()
-    return render_template('test_scrape.html', weather = text)
+    return render_template('test_scrape.html', weather = text, forecast_url = url)
 
-@app.route('/testcache')
-def test_cache():
-    text = get_web_forecast_v2(url)
-    return render_template('test_scrape.html', weather = text)    
 
 @app.route('/api/v1/test1')
 def api_v1_test1():
