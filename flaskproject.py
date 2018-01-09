@@ -4,11 +4,12 @@ from flask_sqlalchemy import SQLAlchemy
 from flask import json
 from flask import jsonify
 from flask import make_response
+from flask import send_from_directory, request
 import os
 from weather_scrape import get_web_forecast
 from weather_scrape import test_file
 from weather_scrape import get_web_forecast_v2
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 app.config.from_object(os.environ['APP_SETTINGS'])
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -19,9 +20,14 @@ db = SQLAlchemy(app)
 def root_page():
     return render_template('index.html')
 
-@app.route("/test")
-def moretest():
-    return "<h2>test more</h2>"
+
+@app.route('/robots.txt')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
+
+@app.route('/reading_list')
+def reading_list():
+    return render_template('reading_list.html')
 
 @app.route("/cssgrid1")
 def cssgrid1test():
@@ -31,9 +37,6 @@ def cssgrid1test():
 def cssgrid2test():
     return render_template('cssgrid2.html')
 
-@app.route('/post/<int:post_id>')
-def show_post(post_id):
-    return 'Post %d' % post_id
 
 @app.route('/hello/')
 @app.route('/hello/<input_name>')

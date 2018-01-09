@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
+    <title>Bay Area Cycling links</title>
   <style>
     .container {
       display: grid;
@@ -63,13 +64,17 @@
   <div class="container">
     <div class="header">
       <center>
+
         {% if forecast_url %}
         <a href="{{forecast_url}}">
         {% endif %}
-        <small>forecast for downtown Los Altos, California</small>  </center>
+        <small>forecast for Los Altos, California</small>
+
       {% if forecast_url %}
       </a>
+
         {% endif %}
+      </center>        
      </div>
 {% if weather %}
 <p><small>{{ weather }}</small></p>
@@ -101,7 +106,11 @@
 </div>
 <div class = 'footer'>
   <center>
-    <small>send corrections to <a href="mailto:stevenwoo@gmail.com">Steven Woo</a></small>
+    
+    <small>
+      <p>send corrections to <a href="mailto:stevenwoo@gmail.com">Steven Woo</a></p>
+      <p>last updated January 8, 2018</p>  
+    </small>
   </center>
 </div>
 <div class = 'ad'>
