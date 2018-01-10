@@ -25,9 +25,17 @@ def root_page():
 def static_from_root():
     return send_from_directory(app.static_folder, request.path[1:])
 
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(app.static_folder,'favicon.ico' )
+
 @app.route('/reading_list')
 def reading_list():
     return render_template('reading_list.html')
+
+@app.route('/server_setup')
+def server_setup():
+    return render_template('server_setup.html')
 
 @app.route("/cssgrid1")
 def cssgrid1test():
@@ -37,6 +45,9 @@ def cssgrid1test():
 def cssgrid2test():
     return render_template('cssgrid2.html')
 
+@app.route("/js1test")
+def js1test():
+    return render_template('js1test.html')
 
 @app.route('/hello/')
 @app.route('/hello/<input_name>')

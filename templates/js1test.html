@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <title>javascript test</title>
+  <script>
+    var theThing = null;
+    var replaceThing = function () {
+//      console.log('entry point');
+      var originalThing = theThing;
+      var unused = function () {
+        if (originalThing) // a reference to 'originalThing'
+           console.log("hi");
+        
+      };
+
+      theThing = {
+        longStr: new Array(1000000).join('*'),
+        someMethod: function () {
+          console.log("message");
+        }
+      };
+    };
+
+    setInterval(replaceThing, 1000);
+    var x= theThing;
+    </script>
+</head>
+<body>
+  </body>
