@@ -1,7 +1,46 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <title>some random stuff</title>    
+    <title>some random stuff</title>
+
+
+      <style>
+    .container {
+    display: grid;
+    grid-gap: 5px;    
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows:  30px 420px 50px 30px;
+
+    grid-template-areas:
+        ". . . . h h h h . . . . "
+        "s s s s s s s s s s s s "
+        "c c c c c c c c c c c c "
+        ". . f f f f f f f f . .";
+    }
+    
+
+
+    .content {
+      grid-area: h;
+    }
+
+    .slideshow {
+      grid-area: s;
+    }
+    .content {
+      grid-area: c;
+    }
+
+    .footer {
+      grid-area: f;
+    }
+
+
+
+
+}
+</style>
+      
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112197486-1"></script>
 <script>
@@ -12,20 +51,35 @@
   gtag('config', 'UA-112197486-1');
 </script>
 
+
+
 </head>
 <body>
-  
+
+  <div class = 'header'>
+<center><small>    Random stuff</small></center>
+  </div>
+  <div class = 'slideshow'>
+
   <p>
-    <a data-flickr-embed="true"  href="https://www.flickr.com/photos/swoo/22394278110/in/dateposted-public/" title="Bella Vista on a clear day"><img src="https://farm1.staticflickr.com/749/22394278110_da37388f82_b.jpg" width="1024" height="220" alt="Bella Vista on a clear day"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+    <a data-flickr-embed="true"  href="https://www.flickr.com/photos/swoo/albums/72157664471868758" title="random cycling"><img src="https://farm5.staticflickr.com/4155/34739816936_8350692843_b.jpg" width="1024" height="368" alt="random cycling"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+    
+    
     </p>
-  <p>
+
+  </div>
+  <div class='content'>
+    
     <center>
+  <p>      
     <a href="/bayareacycling">
       Useful links for cycling in and near the San Francisco Bay Area</a>
     </center>
     <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+</p>
+</div>
+<div class="footer">
+  {% include "footer.html" %}
+</div>
 
-  </p>
-  <p>
-  </p>
 </body>
