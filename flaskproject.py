@@ -5,6 +5,9 @@ from flask import json
 from flask import jsonify
 from flask import make_response
 from flask import send_from_directory, request
+import logging
+import datetime
+import time
 import os
 from weather_scrape import get_web_forecast
 from weather_scrape import test_file
@@ -67,7 +70,12 @@ def cycling():
     # todo parameterize latitude longitude
     # retrieve latitude longitude from browser
     text = get_web_forecast_v2(url)
-    return render_template('bayareacycling.html', weather = text, forecast_url = 'https://' + url)
+    try:
+        mtime = os.path.getmtime('templates/bayareacycling.html')        
+    except OSError:
+        mtime = 0
+    last_modified_date = time.ctime(mtime)
+    return render_template('bayareacycling.html', weather = text, forecast_url = 'https://' + url, updated = last_modified_date)
 
 @app.route('/testscrape')
 def test_scrape():
