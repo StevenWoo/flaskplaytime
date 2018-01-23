@@ -5,6 +5,7 @@ from flask import json
 from flask import jsonify
 from flask import make_response
 from flask import send_from_directory, request
+from flask import Markup
 import logging
 import datetime
 import time
@@ -57,9 +58,16 @@ def js1test():
 def hello(input_name=None):
     return render_template('hello.html', name=input_name)
 
+def read_resume():
+    with open('resume.txt', 'r') as file_object:
+        text = file_object.read()
+        return text
+
 @app.route('/resume/')
 def resume():
-    r = make_response(render_template('resume.html'))
+    file_text = read_resume()
+    file_text = Markup(file_text.replace("\n", "<br />"))
+    r = make_response(render_template('resume.html', text=file_text ))
     r.headers.set('Content-Security-Policy', "default-src 'self'; connect-src 'self'; report-uri 'https://swoo.club/api/v1/csp_report'")
     return r
 
