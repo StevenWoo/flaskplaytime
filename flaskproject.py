@@ -24,6 +24,9 @@ db = SQLAlchemy(app)
 def root_page():
     return render_template('index.html')
 
+@app.route("/personal")
+def personal_page():
+    return render_template('personal.html')
 
 @app.route('/robots.txt')
 def static_from_root():

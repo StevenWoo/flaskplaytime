@@ -1,3 +1,7 @@
+Just doing this to learn flask and put up personal website
+
+my notes on setting this up
+
 #activate environment
 #source flaskprojectenv/bin/activate
 # restart after changing source
@@ -25,5 +29,7 @@ export APP_SETTINGS="config.DevelopmentConfig"
 export APP_SETTINGS="config.ProductionConfig"
 need to add variables to bash/script init
 for production
+
+replace variables with real values for setup script
 export DATABASE_URL="postgresql://dbusername:password@localhost/rocket"
 for localhost
