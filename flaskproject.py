@@ -56,6 +56,11 @@ def cssgrid2test():
 def csstest1():
     return render_template('csstest1.html')
 
+
+@app.route("/jquerytest1")
+def jquerytest1():
+    return render_template('jquerytest1.html')
+
 @app.route("/js1test")
 def js1test():
     return render_template('js1test.html')
