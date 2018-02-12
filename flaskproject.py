@@ -40,6 +40,11 @@ def favicon():
 def reading_list():
     return render_template('reading_list.html')
 
+@app.route('/tv/schedule')
+def tv_schedule():
+    return render_template('tv_schedule.html')
+
+
 @app.route('/server_setup')
 def server_setup():
     return render_template('server_setup.html')

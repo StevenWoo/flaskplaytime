@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>tv schedule</title>
+
+    <style>
+    .container {
+      display: grid;
+      grid-gap: 5px;    
+      grid-template-columns: repeat(16, 1fr);
+      grid-template-rows: 30px 600px 30px;
+       grid-template-areas:
+        ".  .  .  .  .  h  h  h  h  h  h  .  .  .  .  .  "
+        ".  d1 d1 d2 d2 d3 d3 d4 d4 d5 d5 d6 d6 d7 d7 . "
+        ". . . . . . . f  f .  . .  . . . .";    
+    }
+    .header{
+      grid-area: h;
+    }
+    .day1 {
+      grid-area: d1;
+    }
+    .day2 {
+      grid-area: d2;
+    }
+    .day3 {
+      grid-area: d3;
+    }
+    .day4 {
+      grid-area: d4;
+    }
+    .day5 {
+      grid-area: d5;
+    }        
+    .day6 {
+      grid-area: d6;
+    }
+    .day7 {
+      grid-area: d7;
+    }        
+   </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <center>
+          TV schedule
+          </center>
+      </div>
+      <div class="day1">
+       <h3> Monday</h3>
+      </div>
+      <div class="day2">
+       <h3> Tuesday</h3>
+      </div>
+      <div class="day3">
+       <h3> Wednesday</h3>
+      The Magicians<br />
+       Strike Back<br />
+       Fresh off the Boat<br />
+       The Mick<br />
+      </div>
+
+      <div class="day4">
+        
+        <h3>Thursday</h3>
+      </div>
+      <div class="day5">
+<h3>    Friday</h3>
+    Crazy Ex-Girlfriend<br />
+    Jane the Virgin<br />
+           High Maintenance<br />
+           </div>
+    <div class="day6">
+      <h3> Saturday</h3>
+      Counterpart<br />
+      </div>
+    <div class="day7">
+<h3>    Sunday</h3>
+    Divorce<br />
+    Crashing<br />
+Last Week Tonight<br />
+Star Trek Discovery<br />
+    </div>
+    </div>
+  </body>
+  
