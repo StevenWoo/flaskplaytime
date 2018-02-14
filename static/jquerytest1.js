@@ -40,6 +40,19 @@ function domCreateNoteSelectors(notes, selectedNote) {
   });
 }
 
+function domSelectDefaultChild() {
+  var children = $('.note-selector:visible');
+  if (children.length > 0) {
+    var $noteSelector = $(children[0]);
+    if ($('.note-selector.active').length === 0) {
+      $noteSelector.addClass('active');
+      domUpdateNoteEditor($noteSelector.data());
+    }
+  } else {
+    $('.note-editor').hide();
+  }
+}
+
 function domUpdateNoteEditor(selectedNote) {
   $('.note-editor-info').html(formatTimestamp(selectedNote.timestamp));
   $('.note-editor-input').val(selectedNote.body);
@@ -88,6 +101,7 @@ $('.toolbar-button-new').on('click', function() {
 $('.toolbar-button-delete').on('click', function() {
     $('.note-selector.active').remove();
     console.log('hello delete');
+    domSelectDefaultChild();
 });
 
 var notes = [
