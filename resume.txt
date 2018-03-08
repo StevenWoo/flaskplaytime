@@ -1,19 +1,19 @@
 karmist.org
-Founder/Programmer
+Founder/Software Developer
 2017 - present
 Part of team to create Android app with Java and the server API with Ruby on Rails for karmist.org.
 Android link - https://play.google.com/store/apps/details?id=org.karmist.austin
 IOS link - https://itunes.apple.com/us/app/karmist/id1304095240?ls=1&mt=8
 
 Chatloud.com
-Founder/Programmer
+Founder/Software Developer
 2014 - present
-Write and design android code in Java including custom crash logging to server, first pass on IOS app in Objective C for multiple apps. Create web server/mobile API using Ruby on Rails for CRUD app with search/chat/notifications, create web front end using JavaScript/HTML of business/deal/event directory for Sección Amarilla. Created custom libraries in Objective-C for IOS and in Java for Android. Current server at https://miapp.com. Assist in debugging IOS/Android issues.
+Write and design android code in Java including custom crash logging to server, first pass on IOS app in Objective C for multiple apps. Create web server/mobile API using Ruby on Rails for CRUD app with search/chat/notifications, create web front end using JavaScript/HTML of business/deal/event directory for Sección Amarilla. Created custom libraries in Objective-C for IOS and in Java for Android. Current server at https://miapp.com. Architect separate enterprise and consumer apps with communication in between. Assist in debugging IOS/Android issues.
 Android link - https://play.google.com/store/apps/details?id=com.tackable.android.solomo.app
 IOS link - https://itunes.apple.com/us/app/mi/id918607561
 
 Tackable.com
-Founder/Programmer
+Founder/Software Developer
 2010 - 2013
 Part of team to create IOS apps for phone/tablet for Bay Area News Group/Mercury News. Worked in Objective-C to create applications/libraries and also wrote the API/web server in PHP. Assist in debugging IOS issues.
 
