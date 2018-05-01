@@ -127,6 +127,11 @@ def api_v1_test2():
     h['key4'] = 'value4'
     return jsonify(h)
 
+@app.route('/portfolio')
+def portfolio():
+    return render_template('portfolio.html')
+    
+
 if __name__ == "__main__":
   app.run(host='0.0.0.0')
             
