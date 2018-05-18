@@ -70,6 +70,10 @@ def jquerytest1():
 def js1test():
     return render_template('js1test.html')
 
+@app.route("/hackernews")
+def hackernews():
+    return render_template('hackernews.html')
+
 @app.route('/hello/')
 @app.route('/hello/<input_name>')
 def hello(input_name=None):
